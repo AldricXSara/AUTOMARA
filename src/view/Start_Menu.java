@@ -15,13 +15,12 @@ public class Start_Menu {
 	private JFrame frame;
 
 	public Start_Menu() {
-		Start_Menu window = new Start_Menu();
-		window.frame.setVisible(true);
 		initialize();
 	}
 
 	private void initialize() {
 		frame = new JFrame();
+		frame.setVisible(true);
 		frame.setBounds(100, 100, 439, 471);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);

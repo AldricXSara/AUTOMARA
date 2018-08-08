@@ -8,19 +8,20 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class Instructions {
 
 	private JFrame frame;
 
 	public Instructions() {
-		Instructions window = new Instructions();
-		window.frame.setVisible(true);
 		initialize();
 	}
 
 	private void initialize() {
 		frame = new JFrame();
+		frame.setVisible(true);
 		frame.setBounds(100, 100, 439, 471);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
@@ -109,6 +110,12 @@ public class Instructions {
 		panel.add(lblAllItems);
 		
 		JButton btnLetsStart = new JButton("Let's Start!");
+		btnLetsStart.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				frame.setVisible(false);
+				Game gg = new Game();
+			}
+		});
 		btnLetsStart.setFont(new Font("Tahoma", Font.BOLD, 13));
 		btnLetsStart.setBounds(150, 395, 117, 25);
 		panel.add(btnLetsStart);
